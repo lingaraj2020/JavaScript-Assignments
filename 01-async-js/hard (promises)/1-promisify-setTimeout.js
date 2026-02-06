@@ -3,12 +3,16 @@
 */
 
 function wait(n) {
-    let p = new Promise((resolve) => {
-      setTimeout(() => {
+    let p=new Promise((resolve,reject)=>{
+      setTimeout(()=>{
         resolve();
-      }, n * 1000);
+      },n*1000);
     });
-    return p;
+    return p; 
   }
+  
+  wait(2).then(()=>{
+    console.log("2 seconds have passed");
+  });
   
   module.exports = wait;
